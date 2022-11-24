@@ -2,11 +2,12 @@ import { Action, ActionPanel, List } from "@raycast/api";
 import { useState } from "react";
 
 export default function Command() {
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const unixtimeToUtc = (unixtime: string) => {
     return `utc: ${new Date(Number(unixtime)).toUTCString()}`;
   };
   const unixtimeToLocal = (unixtime: string) => {
-    return `local: ${new Date(Number(unixtime)).toLocaleString()}`;
+    return `local: ${new Date(Number(unixtime)).toLocaleString(undefined, { timeZone: timezone })}`;
   };
   const [text, setText] = useState(Date.now().toString());
   const [utc, setUtc] = useState(unixtimeToUtc(text));
@@ -34,7 +35,7 @@ export default function Command() {
       />
       <List.Item
         title={local}
-        subtitle={local}
+        subtitle={`locale: system, timezone: ${timezone}`}
         actions={
           <ActionPanel title="Copy">
             <Action.CopyToClipboard title="Copy to clipboard" content={local} />
