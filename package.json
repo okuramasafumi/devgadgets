@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "devgadgets",
-  "title": "DevGadgets",
+  "name": "dev-gadgets",
+  "title": "Dev Gadgets",
   "description": "A set of gadgets for developers",
   "icon": "command-icon.png",
   "author": "okuramasafumi",
