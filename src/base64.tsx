@@ -26,13 +26,7 @@ export default function Command() {
         value={decodedString}
         onChange={setDecodedString}
       />
-      <Form.TextArea
-        id="encoded-string"
-        autoFocus={true}
-        title="Encoded string"
-        value={encodedString}
-        onChange={setEncodedString}
-      />
+      <Form.TextArea id="encoded-string" title="Encoded string" value={encodedString} onChange={setEncodedString} />
     </Form>
   );
 }
